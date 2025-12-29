@@ -1,0 +1,236 @@
+#head{
+    text-align: center;
+    font-size: 75px;
+    font-family: "Cinzel";
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-image: url("E:\WhatsApp Image 2025-10-30 at 20.04.36_da2a5d16.jpg");
+    color: white;
+    background-size: 600px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 200px;    
+}
+
+.navbar ul{
+    list-style-type: none;
+    background-color: hsl(0, 0%, 25%);
+    padding: 10px;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    /* width: 100%; */
+    justify-content: space-evenly;
+}
+
+.navbar a{
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    font-family: "MedievalSharp","Cinzel",serif;
+}
+
+.navbar a:hover{
+    background-color: rgb(0, 0, 0);
+    /* padding-left: 50px;
+    padding-right: 50px; */
+    cursor: pointer;
+}
+
+.navbar li{
+    float: left;
+}
+
+body{
+    margin: 0px;
+    /* background-color: #f8f5e6; */
+    background-image: url("images/bground.png");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: sans-serif;
+}
+
+a:link{
+    color: white;
+}
+
+a:visited{
+    text-decoration: none;
+}
+
+a:hover{
+    color: #FFD700;
+}
+
+a:active{
+    color: #0000FF;
+}
+
+.intro {
+    padding: 50px;
+    color: #333;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    max-width: 1200px;
+    margin: 10px auto;
+    line-height: 1.6;
+}
+
+.card{
+    /* border: 3px solid #555;
+    background-color: white;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 010px;
+    /* text-align: center */
+    /* text-align: left;       
+    font-size: 14px;        
+    line-height: 1.5;       
+    margin-top: 10px;       
+    color: #333; */ 
+    border: 1px solid #444;
+    background-color: white;
+    width: 300px;              
+    text-align: center;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+
+
+.card1, .card2{
+    border: 1px solid #444;
+    background-color: white;
+    width: 300px;              
+    text-align: center;
+    padding: 45px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    padding-bottom: 55px;
+}
+
+.card1 img{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;    
+    border-radius: 5px;
+
+}
+
+.card2 img{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card img{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.spell-text{
+    text-align: left;
+    max-width: 1500px;
+    margin: 20px auto;
+    line-height: 1.8;
+    font-size: 30px;
+}
+
+.spell-text h3{
+    color: #d4af37;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+    margin-top: 25px;
+    font-family: serif;
+}
+
+.spell h2{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.incantation{
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 50px;
+    font-style: 50px;
+    color: #fff;
+
+    text-shadow: 
+        0 0 10px #d4af37,
+        0 0 20px #d4af37,
+        0 0 40px #ff0000;
+
+    margin-top: 10px;
+    margin-bottom: 50px;
+
+    animation: floating1 3s ease-in-out infinite;
+}
+
+@keyframes floating1{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+        text-shadow: 0 0 30px #d4af37, 0 0 60px #d4af37, 0 0 90px #ff0000;        
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.incantation:hover{
+    cursor: pointer;
+    text-shadow: 
+        0 0 20px #ffffff,  /*Horizontal-Offset, Vertical-Offset, Blur-amount*/       
+        0 0 40px #d4af37,         
+        0 0 80px #d4af37;
+    transition: 0.3s;
+}
+
+.card1:hover{
+    cursor: pointer;
+    animation: floating 1s ease-in;
+    transform: translateY(-15px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card2:hover{
+    cursor: pointer;
+    animation: floating 1s ease-in ;
+    transform: translateY(-15px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover{
+    cursor: pointer;
+    transform: translateY(-15px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+

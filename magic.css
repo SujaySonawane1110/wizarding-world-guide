@@ -1,0 +1,255 @@
+#head{
+    text-align: center;
+    font-size: 56px;
+    font-family: "Cinzel";
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-image: url("E:\WhatsApp Image 2025-10-30 at 20.04.36_da2a5d16.jpg");
+    color: white;
+    background-size: 600px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 200px;    
+}
+
+.navbar ul{
+    list-style-type: none;
+    background-color: hsl(0, 0%, 25%);
+    padding: 10px;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    /* width: 100%; */
+    border-top: 2px solid black;    
+    border-bottom: 2px solid black; 
+    justify-content: space-evenly;
+}
+
+.navbar a{
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    font-family: "MedievalSharp","Cinzel",serif;
+}
+
+.navbar a:hover{
+    background-color: rgb(0, 0, 0);
+    /* padding-left: 50px;
+    padding-right: 50px; */
+    cursor: pointer;
+}
+
+.navbar a:active{
+    color: #ffd700; 
+    text-shadow: 0 0 10px #ffd700;
+}
+
+.navbar li{
+    float: left;
+}
+
+.category-header{
+    text-align: center;
+    margin-top:60px;
+    margin-bottom: 30px;
+}
+
+.category-header h2{
+    font-size: 45px;
+    font-family: "IM Fell English", serif;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(123, 44, 191, 0.5);
+}
+
+.category-header p{
+    font-size: 18px;
+    font-family: "Cinzel", serif;
+    color: #bbaadd;
+}
+
+.magic-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 20px 60px 60px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.magic-card{
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(160deg, rgba(60, 30, 100, 0.9), rgba(30, 15, 60, 0.95));
+    border: 2px solid #7b2cbf;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(123, 44, 191, 0.4), inset 0 0 10px rgba(123, 44, 191, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.magic-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(150, 80, 255, 0.7);
+    border-color: #a880ff;
+}
+
+.card-image-container{
+    height: 75%;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 2px solid #5a2a8f;
+}
+
+.card-image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.magic-card:hover .card-image-container img:hover{
+    transform: scale(1.1);
+} 
+
+.card-info{
+    height: 25%;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    padding: 0 25px;
+    background: rgba(20, 10, 40, 0.6);
+}
+
+.card-info h3{
+    font-family: "Cinzel", serif;
+    margin: 0;
+    color: #e0d8ff;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.arrow-btn{
+    background: transparent;
+    border: 2px solid #9c70ff;
+    border-radius: 12px;
+    color: #ffd700;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.arrow-btn:hover{
+    background-color: #7b2cbf;
+    box-shadow: 0 0 10px #7b2cbf;
+    transform: rotate(90deg);
+    color: white;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.4s;
+}
+
+.modal-content{
+    background-color: #2a1545;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    border: 2px solid #0c70ff;
+    box-shadow: 0 0 60px rgba(123, 44, 191, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+#modal-title{
+    text-align: center;
+    font-family: "Cinzel", serif;
+    color: #ffd700;
+    margin: 20px 0 ;
+    font-size: 32px;
+    text-shadow: 0 0 10px rgba(123, 44, 191, 0.5);
+}
+
+.modal-body { 
+    position: relative; 
+    width: 100%; height: 
+    400px; 
+}
+
+#modal-img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.modal-text-overlay {
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+    color: #e0d8ff;
+    padding: 30px; 
+    box-sizing: border-box;
+}
+
+#modal-desc { 
+    font-family: "MedievalSharp", serif; 
+    font-size: 20px; 
+    line-height: 1.6; 
+}
+
+.close-btn{
+    position: absolute; 
+    top: 15px; 
+    right: 25px;
+    color: #9c70ff; 
+    font-size: 40px; 
+    font-weight: bold;
+    cursor: pointer; 
+    z-index: 1001; 
+    transition: 0.3s;
+}
+
+.close-btn:hover{ 
+    color: #ffd700; 
+}
+
+@keyframes fadeIn{ 
+    from {opacity: 0;} to {opacity: 1;} 
+}
+
+body {
+    margin: 0;
+    background-color: #f8f5e6;
+    font-family: sans-serif;
+    /* Adding your BG image back */
+    background-image: url("images/magic_bg.png"); 
+    background-size: cover;
+    background-attachment: fixed;
+}

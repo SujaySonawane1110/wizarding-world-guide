@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Wizarding World Guide</title>
+        <link rel="stylesheet" href="places.css">
+        <script src="places.js"></script>
+
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=IM+Fell+DW+Pica+SC&family=IM+Fell+English:ital@0;1&family=MedievalSharp&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 id="head">Welcome to The Wizarding World</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="characters.html">CHARACTERS</a></li>
+                <li><a href="#">PLACES</a></li>
+                <li><a href="magic.html">MAGIC</a></li>
+                <li><a href="hogwarts.html">HOGWARTS</a></li>
+            </ul>
+        </nav>
+
+        <h1 style="text-align:center; margin-top:40px; font-family: 'Cinzel', serif;">Magical Locations</h1>
+
+        <div class="places-grid">
+
+            <div class="place-card" 
+                 data-name="Hogwarts School" 
+                 data-img="E:\wallpaper\.hogwarts-burning-harry-potter-and-the-deathly-hallows-4k-wallpaper-preview.jpg"
+                 data-desc="The finest school of witchcraft and wizardry in the world. Located in the Scottish Highlands.">
+                <div class="card-image-container">
+                    <img src="E:\wallpaper\.hogwarts-burning-harry-potter-and-the-deathly-hallows-4k-wallpaper-preview.jpg" alt="Hogwarts">
+                </div>
+                <div class="place-info">
+                    <h3>Hogwarts School</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Diagon Alley" 
+                 data-img="D:\html\main\images\Gifting_Hero3_54036937-4278-40a4-9156-b9c58567163f.webp"
+                 data-desc="The hidden wizarding market in London. Buy your wands, owls, and books here.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\Gifting_Hero3_54036937-4278-40a4-9156-b9c58567163f.webp" alt="Diagon Alley">
+                </div>
+                <div class="place-info">
+                    <h3>Diagon Alley</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Hogsmeade Village" 
+                 data-img="D:\html\main\images\hogsmeade_3_1800x1248.jpeg"
+                 data-desc="The only all-wizarding village in Britain. Famous for Butterbeer and Honeydukes.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\hogsmeade_3_1800x1248.jpeg" alt="Hogsmeade">
+                </div>
+                <div class="place-info">
+                    <h3>Hogsmeade Village</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Platform 9¾" 
+                 data-img="D:\html\main\images\plat.webp"
+                 data-desc="The gateway between the Muggle world and the Hogwarts Express at King's Cross.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\plat.webp" alt="Platform 9 3/4">
+                </div>
+                <div class="place-info">
+                    <h3>Platform 9¾</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="The Ministry of Magic" 
+                 data-img="D:\html\main\images\10-Things-About-the-Ministry-of-Magic-F.avif"
+                 data-desc="The Ministry of Magic is located in London and is the workplace for various employees governing the magical community.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\10-Things-About-the-Ministry-of-Magic-F.avif" alt="ministry of magic">
+                </div>
+                <div class="place-info">
+                    <h3>The Ministry of Magic</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Gringotts Wizarding Bank" 
+                 data-img="D:\html\main\images\Gringotts_bank.webp"
+                 data-desc="The safest place in the world for anything you want to keep safe—except for Hogwarts. Run by goblins.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\Gringotts_bank.webp" alt="Gringotts Wizarding Bank">
+                </div>
+                <div class="place-info">
+                    <h3>Gringotts Wizarding Bank</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="St Mungo's Hospital" 
+                 data-img="D:\html\main\images\mungod.jpg"
+                 data-desc="The primary hospital for magical maladies and injuries in Britain. Hidden inside an old department store.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\mungod.jpg" alt="St Mungo's Hospital">
+                </div>
+                <div class="place-info">
+                    <h3>St Mungo's Hospital</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="The Forbidden Forest" 
+                 data-img="D:\html\main\images\forest.png"
+                 data-desc="A dark, dense forest on the grounds of Hogwarts, home to centaurs, acromantulas, and unicorns.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\forest.png" alt="The Forbidden Forest">
+                </div>
+                <div class="place-info">
+                    <h3>The Forbidden Forest</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="The Burrow" 
+                 data-img="D:\html\main\images\Theburrow..webp"
+                 data-desc="The magically held-together home of the Weasley family. It is warm, cluttered, and full of love.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\Theburrow..webp" alt="The Burrow">
+                </div>
+                <div class="place-info">
+                    <h3>The Burrow</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="12 Grimmauld Place" 
+                 data-img="D:\html\main\images\12-Grimmauld-Place-London-Claremont-Square-Harry-Potter-6.jpg"
+                 data-desc="The ancestral home of the Black family and the hidden headquarters for the Order of the Phoenix.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\12-Grimmauld-Place-London-Claremont-Square-Harry-Potter-6.jpg" alt="12 Grimmauld Place">
+                </div>
+                <div class="place-info">
+                    <h3>12 Grimmauld Place</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Malfoy Manor" 
+                 data-img="D:\html\main\images\malfoy-manor.jpg"
+                 data-desc="The lavish country estate of the Malfoy family, often used as a base of operations by Lord Voldemort.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\malfoy-manor.jpg" alt="Malfoy Manor">
+                </div>
+                <div class="place-info">
+                    <h3>Malfoy Manor</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Godric's Hollow" 
+                 data-img="D:\html\main\images\Godrics_Hollow.webp"
+                 data-desc="The birthplace of Harry Potter and burial ground of Ignotus Peverell. A historic village with a secret magical history.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\Godrics_Hollow.webp" alt="Godric's Hollow">
+                </div>
+                <div class="place-info">
+                    <h3>Godric's Hollow</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Shell Cottage" 
+                 data-img="D:\html\main\images\shell-cottage.png"
+                 data-desc="A lonely, beautiful cottage by the sea, home to Bill Weasley and Fleur Delacour.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\shell-cottage.png" alt="Shell Cottage">
+                </div>
+                <div class="place-info">
+                    <h3>Shell Cottage</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="The Leaky Cauldron" 
+                 data-img="D:\html\main\images\Leaky_Cauldron.webp"
+                 data-desc="A popular wizarding pub in London that serves as the gateway to Diagon Alley.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\Leaky_Cauldron.webp" alt="The Leaky Cauldron">
+                </div>
+                <div class="place-info">
+                    <h3>The Leaky Cauldron</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Ollivanders" 
+                 data-img="D:\html\main\images\OLLIWANDERS.jpeg"
+                 data-desc="Makers of fine wands since 382 B.C. The place where every young wizard chooses their wand.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\OLLIWANDERS.jpeg" alt="Ollivanders">
+                </div>
+                <div class="place-info">
+                    <h3>Ollivanders</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Weasleys' Wizard Wheezes" 
+                 data-img="D:\html\main\images\WWW.jpeg"
+                 data-desc="A joke shop run by Fred and George Weasley, filled with Skiving Snackboxes and Pygmy Puffs.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\WWW.jpeg" alt="Weasleys' Wizard Wheezes">
+                </div>
+                <div class="place-info">
+                    <h3>Weasleys' Wizard Wheezes</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Borgin and Burkes" 
+                 data-img="D:\html\main\images\B&B.jpeg"
+                 data-desc="A sinister shop in Knockturn Alley specializing in objects related to the Dark Arts.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\B&B.jpeg" alt="Borgin and Burkes">
+                </div>
+                <div class="place-info">
+                    <h3>Borgin and Burkes</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="The Three Broomsticks" 
+                 data-img="D:\html\main\images\3broomsticks.jpeg"
+                 data-desc="A well-known inn and pub in Hogsmeade, famous for its warm Butterbeer.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\3broomsticks.jpeg" alt="The Three Broomsticks">
+                </div>
+                <div class="place-info">
+                    <h3>The Three Broomsticks</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Beauxbatons Academy" 
+                 data-img="D:\html\main\images\Beauxbatons.webp"
+                 data-desc="The French school of magic, known for its elegant palace and ice sculptures in the Pyrenees.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\Beauxbatons.webp" alt="Beauxbatons Academy">
+                </div>
+                <div class="place-info">
+                    <h3>Beauxbatons Academy</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Durmstrang Institute" 
+                 data-img="D:\html\main\images\DurmstrangCrest.webp"
+                 data-desc="A magical school in Northern Europe that is notoriously secretive and teaches the Dark Arts.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\DurmstrangCrest.webp" alt="Durmstrang Institute">
+                </div>
+                <div class="place-info">
+                    <h3>Durmstrang Institute</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+            <div class="place-card" 
+                 data-name="Ilvermorny School" 
+                 data-img="D:\html\main\images\ilvermony.jpg"
+                 data-desc="The great North American school of magic, located on the peak of Mount Greylock.">
+                <div class="card-image-container">
+                    <img src="D:\html\main\images\ilvermony.jpg" alt="Ilvermorny School">
+                </div>
+                <div class="place-info">
+                    <h3>Ilvermorny School</h3>
+                    <button class="arrow-btn" onclick="openModal(this)">&#10132;</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="place-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title">Place Name</h2>
+                <div class="modal-body">
+                    <img id="modal-img" src="" alt="">
+                    <div class="modal-text-overlay">
+                        <p id="modal-desc">Description goes here...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

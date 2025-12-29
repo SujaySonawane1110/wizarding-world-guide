@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="magic.css">
+    <script src="magic.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=IM+Fell+DW+Pica+SC&family=IM+Fell+French+Canon+SC&family=MedievalSharp&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <title>The Wizarding World Guide</title>
+</head>
+<body>
+    <h1 id="head">Welcome to The Wizarding World</h1>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="characters.html">CHARACTERS</a></li>
+            <li><a href="places.html">PLACES</a></li>
+            <li><a href="magic.html">MAGIC</a></li>
+            <li><a href="hogwarts.html">HOGWARTS</a></li>
+        </ul>
+    </nav>
+    
+    
+    <div class="category-header">
+        <h2>Charms & Spells</h2>
+        <p>Wand movements and incantations for the aspiring wizard.</p>
+    </div>
+
+    <div class="magic-grid">
+        <div class="magic-card"
+            data-name="Wigardium Leviosa"
+            data-img="D:\html\main\images\wingardium leviosa.png"
+            data-desc="The Levitation Charm. It is used to make objects fly, or levitate. Remember the wand movement: Swish and flick!">
+            <div class="card-image-container">
+                <img src="D:\html\main\images\wingardium leviosa.png" alt="Wigardium Leviosa">
+            </div>
+            <div class="card-info">
+                <h3>Wingardium Leviosa</h3>
+                <button class="arrow-btn" onclick="openModal(this)">&#10022;</button>
+            </div>
+        </div>
+        <div class="magic-card" 
+             data-name="Expelliarmus" 
+             data-img="D:\html\main\images\expelliarmus.png" 
+             data-desc="The Disarming Charm. It forces whatever an opponent is holding to fly out of their hand. A staple of dueling.">
+            <div class="card-image-container">
+                <img src="D:\html\main\images\expelliarmus.png" alt="Expelliarmus">
+            </div>
+            <div class="card-info">
+                <h3>Expelliarmus</h3>
+                <button class="arrow-btn" onclick="openModal(this)">&#10022;</button>
+            </div>
+        </div>
+        <div class="magic-card" 
+             data-name="Expecto Patronum" 
+             data-img="D:\html\main\images\patronus.jpg" 
+             data-desc="The Patronus Charm. A highly advanced defensive charm that summons a spirit guardian made of positive energy to fend off Dementors.">
+            <div class="card-image-container">
+                <img src="D:\html\main\images\patronus.jpg" alt="Expecto Patronum">
+            </div>
+            <div class="card-info">
+                <h3>Expecto Patronum</h3>
+                <button class="arrow-btn" onclick="openModal(this)">&#10022;</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-header">
+        <h2>Potions & Elixirs</h2>
+        <p>Brew glory, stopper death.</p>
+    </div>
+
+    <div class="magic-grid" style="justify-content: center;">
+        <div class="magic-card" 
+             data-name="Polyjuice Potion" 
+             data-img="D:\html\main\images\polyjuice.webp" 
+             data-desc="A complicated and time-consuming potion that allows the drinker to assume the physical appearance of another person for a short period.">
+            <div class="card-image-container">
+                <img src="D:\html\main\images\polyjuice.webp" alt="Polyjuice Potion">
+            </div>
+            <div class="card-info">
+                <h3>Polyjuice Potion</h3>
+                <button class="arrow-btn" onclick="openModal(this)">&#10022;</button>
+            </div>
+        </div>
+
+        <div class="magic-card" 
+             data-name="Felix Felicis" 
+             data-img="D:\html\main\images\felix.avif" 
+             data-desc="Also known as Liquid Luck. A rare and hard-to-brew potion that makes the drinker incredibly lucky in all their endeavors, until it wears off.">
+            <div class="card-image-container">
+                <img src="D:\html\main\images\felix.avif" alt="Felix Felicis">
+            </div>
+            <div class="card-info">
+                <h3>Felix Felicis</h3>
+                <button class="arrow-btn" onclick="openModal(this)">&#10022;</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="place-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Spell Name</h2>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="">
+                <div class="modal-text-overlay">
+                    <p id="modal-desc">Description goes here...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

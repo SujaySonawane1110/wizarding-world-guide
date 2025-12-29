@@ -1,0 +1,233 @@
+/* --- EXISTING FONTS & HEADER STYLES --- */
+#head {
+    text-align: center;
+    font-size: 75px;
+    font-family: "Cinzel";
+    background-image: url("E:\WhatsApp Image 2025-10-30 at 20.04.36_da2a5d16.jpg");
+    color: white;
+    padding: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150% 200px; /* Changed to cover to fill banner */
+}
+
+/* Navbar Styles */
+.navbar ul {
+    list-style-type: none;
+    background-color: hsl(0, 0%, 25%);
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar a {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "MedievalSharp", "Cinzel", serif;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: black;
+}
+
+body {
+    margin: 0;
+    background-color: #f8f5e6;
+    font-family: sans-serif;
+    /* Adding your BG image back */
+    background-image: url('images/bg.jpg'); 
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* --- NEW CARD GRID STYLES --- */
+
+.places-grid {
+    display: grid; /* makes 2 columns that automatically resize */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Responsive columns */
+    gap: 30px;
+    padding: 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.place-card {
+    /* Set fixed height to control proportions */
+    height: 450px; 
+    display: flex;
+    flex-direction: column; /* Stack image and info vertically */
+    
+    background-color: rgba(251, 224, 122, 0.3); /* Glassy yellow */
+    border: 1px solid #070501;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-color: white;
+}
+
+/* 80% HEIGHT IMAGE SECTION */
+.card-image-container {
+    height: 80%; /* Takes up 80% of the card */
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers area without stretching */
+    transition: transform 0.5s ease;
+}
+
+.place-card:hover .card-image-container img {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* 20% HEIGHT INFO SECTION */
+.place-info {
+    height: 20%; /* Remaining 20% */
+    display: flex;
+    justify-content: space-between; /* Pushes Name left, Arrow right */
+    align-items: center;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.6); /* Dark background for contrast */
+}
+
+.place-info h3 {
+    margin: 10;
+    color: #d4af37; /* Gold text */
+    font-family: "IM Fell English", serif;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds ... if name is too long */
+}
+
+/* ARROW BUTTON STYLING */
+.arrow-btn {
+    background: transparent;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-btn:hover {
+    background-color: #d4af37;
+    color: black;
+    transform: rotate(360deg); /* Spin effect */
+}
+
+/* --- POPUP / MODAL STYLES --- */
+
+/* The Background Overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.4s;
+}
+
+/* The Modal Box */
+.modal-content {
+    background-color: #f8f5e6;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    border: 4px solid #d4af37;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.4);
+}
+
+/* Modal Title */
+#modal-title {
+    text-align: center;
+    font-family: "Cinzel", serif;
+    font-size: 35px;
+    color: #2a2a2a;
+    margin: 15px 0;
+}
+
+/* Modal Body (Image + Text Overlay) */
+.modal-body {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Fixed height for modal image area */
+}
+
+#modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Text covering the image */
+.modal-text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: white;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    min-height: 150px; /* Ensure space for text */
+}
+
+#modal-desc {
+    font-family: "MedievalSharp", serif;
+    font-size: 20px;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px black;
+}
+
+/* Close Button (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #d4af37;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
