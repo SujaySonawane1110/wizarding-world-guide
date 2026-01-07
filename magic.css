@@ -253,3 +253,16 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
+.search-area { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    cursor: pointer;
+    /* background: white;  */
+    width: 700px; 
+    padding: 20px; 
+    /* size: 50px; */
+    /* border-bottom: 2px solid #ccc;  */
+    /* font-size: 40px; */
+}
