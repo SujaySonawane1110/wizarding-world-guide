@@ -67,12 +67,71 @@
 /* body { font-family: sans-serif; padding-bottom: 500px; } */
 .search-area { 
     position: fixed; 
-    top: 0; 
-    left: 0; 
-    background: white; 
-    width: 100%; 
-    padding: 20px; 
-    border-bottom: 2px solid #ccc; 
+    top: 20px; 
+    right: 30px; 
+    background: #f4ecd8;
+    background-image: radial-gradient(#e0cba8 1px, transparent 1px);
+    background-size: 10px 10px;
+    padding: 10px 20px; 
+    border: 2px solid #8b5a2b; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 0 10px #e0cba8;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'IM Fell DW Pica SC', serif;
+}
+
+.search-area label {
+    display: none;
+}
+
+.search-area input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px dashed #8b5a2b;
+    font-family: 'IM Fell DW Pica SC', serif;
+    font-size: 18px;
+    color: #3e2723;
+    padding: 5px;
+    outline: none;
+    width: 220px;
+    transition: width 0.3s ease;
+}
+
+.search-area input:focus {
+    width: 260px;
+}
+
+.search-area input::placeholder {
+    color: #8b5a2b;
+    opacity: 0.7;
+}
+
+.search-area button {
+    background: #4a3623;
+    color: #f4ecd8;
+    border: none;
+    padding: 8px 15px;
+    font-family: 'IM Fell DW Pica SC', serif;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-area button::before {
+    content: '\2712';
+    font-size: 18px;
+}
+
+.search-area button:hover {
+    background: #3e2723;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .character-section { 

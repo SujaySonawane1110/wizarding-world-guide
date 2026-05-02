@@ -231,3 +231,62 @@ body {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
+/* Minimalist Search Area */
+.search-area { 
+    position: fixed; 
+    top: 20px; 
+    right: 30px; 
+    background: rgba(248, 245, 230, 0.8);
+    padding: 5px 15px; 
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #5a1818;
+    border-radius: 5px 5px 0 0;
+    backdrop-filter: blur(5px);
+}
+
+.search-area:focus-within {
+    border-bottom: 2px solid #8a2be2; 
+    box-shadow: 0 10px 10px -10px rgba(90, 24, 24, 0.5);
+}
+
+.search-area input {
+    background: transparent;
+    border: none;
+    font-family: 'Tangerine', cursive; 
+    font-size: 32px;
+    color: #3b0f0f;
+    padding: 5px;
+    outline: none;
+    width: 200px;
+    font-weight: bold;
+    transition: width 0.3s ease;
+}
+
+.search-area input:focus {
+    width: 250px;
+}
+
+.search-area input::placeholder {
+    color: #7a3838;
+}
+
+.search-area button {
+    background: transparent;
+    color: #5a1818;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-area button:hover {
+    transform: translateX(5px);
+    color: #3b0f0f;
+}
