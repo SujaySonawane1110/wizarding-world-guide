@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Wizarding World Guide - Artifacts</title>
+    <link rel="stylesheet" href="artifacts.css">
+    <script src="artifacts.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=IM+Fell+DW+Pica+SC&family=IM+Fell+English:ital@0;1&family=MedievalSharp&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="head">
+        <img src="images/wizpedia_head.jpeg" alt="Wizpedia Header">
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="characters.html">CHARACTERS</a></li>
+            <li><a href="places.html">PLACES</a></li>
+            <li><a href="magic.html">MAGIC</a></li>
+            <li><a href="artifacts.html">ARTIFACTS</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-area">
+        <input type="text" id="searchBox" placeholder="Search artifacts..." oninput="filterArtifacts()">
+        <button>&#128099;</button>
+    </div>
+
+    <h1 style="text-align:center; margin-top:40px; font-family: 'Cinzel', serif;">Magical Artifacts</h1>
+
+    <div class="places-grid">
+
+        <div class="place-card" onclick="openModal(this)" data-name="Sorcerer's Stone"
+            data-img="D:\html\main\images\ps.png" data-desc="A legendary alchemical substance with magical properties."
+            data-link="https://harrypotter.fandom.com/wiki/Philosopher%27s_Stone">
+            <div class="card-image-container">
+                <img src="images/ps.png" alt="Sorcerer's Stone">
+            </div>
+            <div class="place-info">
+                <h3>Sorcerer's Stone</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Elder Wand" data-img="images/elder_wand.png"
+            data-desc="The most powerful wand in existence, one of the Deathly Hallows."
+            data-link="https://harrypotter.fandom.com/wiki/Elder_Wand">
+            <div class="card-image-container">
+                <img src="images/elder_wand.png" alt="Elder Wand">
+            </div>
+            <div class="place-info">
+                <h3>Elder Wand</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Invisibility Cloak"
+            data-img="images/invisibility_cloak.png"
+            data-desc="A magical garment that renders the wearer completely invisible."
+            data-link="https://harrypotter.fandom.com/wiki/Cloak_of_Invisibility">
+            <div class="card-image-container">
+                <img src="images/invisibility_cloak.png" alt="Invisibility Cloak">
+            </div>
+            <div class="place-info">
+                <h3>Invisibility Cloak</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Marauder's Map"
+            data-img="images/marauder's_map.png" data-desc="A magical document that reveals all of Hogwarts School."
+            data-link="https://harrypotter.fandom.com/wiki/Marauder%27s_Map">
+            <div class="card-image-container">
+                <img src="images/marauder's_map.png" alt="Marauder's Map">
+            </div>
+            <div class="place-info">
+                <h3>Marauder's Map</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Time Turner" data-img="images/time_turner.png"
+            data-desc="A magical device used for time travel."
+            data-link="https://harrypotter.fandom.com/wiki/Time-Turner">
+            <div class="card-image-container">
+                <img src="images/time_turner.png" alt="Time Turner">
+            </div>
+            <div class="place-info">
+                <h3>Time Turner</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Nimbus 2000" data-img="images/nimbus_2000.png"
+            data-desc="A high-performance flying broomstick used by Harry Potter."
+            data-link="https://harrypotter.fandom.com/wiki/Nimbus_2000">
+            <div class="card-image-container">
+                <img src="images/nimbus_2000.png" alt="Nimbus 2000">
+            </div>
+            <div class="place-info">
+                <h3>Nimbus 2000</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Firebolt" data-img="images/firebolt.png"
+            data-desc="A world-class flying broomstick, the fastest of its time."
+            data-link="https://harrypotter.fandom.com/wiki/Firebolt">
+            <div class="card-image-container">
+                <img src="images/firebolt.png" alt="Firebolt">
+            </div>
+            <div class="place-info">
+                <h3>Firebolt</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Horcrux Locket"
+            data-img="images/horcrux_locket.png"
+            data-desc="Salazar Slytherin's locket, turned into a dark object by Voldemort."
+            data-link="https://harrypotter.fandom.com/wiki/Salazar_Slytherin%27s_Locket">
+            <div class="card-image-container">
+                <img src="images/horcrux_locket.png" alt="Horcrux Locket">
+            </div>
+            <div class="place-info">
+                <h3>Horcrux Locket</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Hufflepuff Cup"
+            data-img="images/hufflepuff_cup.png" data-desc="A magical cup created by Helga Hufflepuff."
+            data-link="https://harrypotter.fandom.com/wiki/Helga_Hufflepuff%27s_Cup">
+            <div class="card-image-container">
+                <img src="images/hufflepuff_cup.png" alt="Hufflepuff Cup">
+            </div>
+            <div class="place-info">
+                <h3>Hufflepuff Cup</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Ravenclaw Diadem"
+            data-img="images/ravenclaw_diadem.png" data-desc="Rowena Ravenclaw's lost diadem, said to grant wisdom."
+            data-link="https://harrypotter.fandom.com/wiki/Rowena_Ravenclaw%27s_Diadem">
+            <div class="card-image-container">
+                <img src="images/ravenclaw_diadem.png" alt="Ravenclaw Diadem">
+            </div>
+            <div class="place-info">
+                <h3>Ravenclaw Diadem</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Gryffindor Sword"
+            data-img="images/gryffindor_sword.png" data-desc="A goblin-made sword owned by Godric Gryffindor."
+            data-link="https://harrypotter.fandom.com/wiki/Sword_of_Gryffindor">
+            <div class="card-image-container">
+                <img src="images/gryffindor_sword.png" alt="Gryffindor Sword">
+            </div>
+            <div class="place-info">
+                <h3>Gryffindor Sword</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Beaded Bag" data-img="images/beaded_bag.png"
+            data-desc="A magically expanded bag used by Hermione Granger."
+            data-link="https://harrypotter.fandom.com/wiki/Hermione_Granger%27s_beaded_handbag">
+            <div class="card-image-container">
+                <img src="images/beaded_bag.png" alt="Beaded Bag">
+            </div>
+            <div class="place-info">
+                <h3>Beaded Bag</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="artifact-section-header">
+        <h2>Legendary Magical Objects</h2>
+        <p>Objects of unparalleled power, legend, and historical significance.</p>
+    </div>
+    <div class="places-grid">
+
+        <div class="place-card" onclick="openModal(this)" data-name="Resurrection Stone"
+            data-img="images/resurrection_stone.png"
+            data-desc="A magical stone that can supposedly bring back spirits of the dead."
+            data-link="https://harrypotter.fandom.com/wiki/Resurrection_Stone">
+            <div class="card-image-container">
+                <img src="images/resurrection_stone.png" alt="Resurrection Stone">
+            </div>
+            <div class="place-info">
+                <h3>Resurrection Stone</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Deluminator" data-img="images/deluminator.png"
+            data-desc="A device created by Dumbledore that can absorb and return light."
+            data-link="https://harrypotter.fandom.com/wiki/Deluminator">
+            <div class="card-image-container">
+                <img src="images/deluminator.png" alt="Deluminator">
+            </div>
+            <div class="place-info">
+                <h3>Deluminator</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Mirror of Erised"
+            data-img="images/mirror_of_erised.png"
+            data-desc="A magical mirror that shows the deepest, most desperate desire of the heart."
+            data-link="https://harrypotter.fandom.com/wiki/Mirror_of_Erised">
+            <div class="card-image-container">
+                <img src="images/mirror_of_erised.png" alt="Mirror of Erised">
+            </div>
+            <div class="place-info">
+                <h3>Mirror of Erised</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Pensieve" data-img="images/pensieve.png"
+            data-desc="A basin used to store and review memories."
+            data-link="https://harrypotter.fandom.com/wiki/Pensieve">
+            <div class="card-image-container">
+                <img src="images/pensieve.png" alt="Pensieve">
+            </div>
+            <div class="place-info">
+                <h3>Pensieve</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Goblet of Fire"
+            data-img="images/goblet_of_fire.png"
+            data-desc="An impartial judge that selects champions for the Triwizard Tournament."
+            data-link="https://harrypotter.fandom.com/wiki/Goblet_of_Fire">
+            <div class="card-image-container">
+                <img src="images/goblet_of_fire.png" alt="Goblet of Fire">
+            </div>
+            <div class="place-info">
+                <h3>Goblet of Fire</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="artifact-section-header">
+        <h2>Dark Artifacts</h2>
+        <p>Items imbued with dark magic, meant to cause harm, control, or achieve dark ends.</p>
+    </div>
+    <div class="places-grid">
+
+        <div class="place-card" onclick="openModal(this)" data-name="Hand of Glory" data-img="images/hand_of_glory.png"
+            data-desc="A shriveled hand that gives light only to the holder."
+            data-link="https://harrypotter.fandom.com/wiki/Hand_of_Glory">
+            <div class="card-image-container">
+                <img src="images/hand_of_glory.png" alt="Hand of Glory">
+            </div>
+            <div class="place-info">
+                <h3>Hand of Glory</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Vanishing Cabinet"
+            data-img="images/vanishing_cabinet.png"
+            data-desc="A cabinet that forms a magical passage between two locations if used as a pair."
+            data-link="https://harrypotter.fandom.com/wiki/Vanishing_Cabinet">
+            <div class="card-image-container">
+                <img src="images/vanishing_cabinet.png" alt="Vanishing Cabinet">
+            </div>
+            <div class="place-info">
+                <h3>Vanishing Cabinet</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Blood Quill" data-img="images/blood_quill.png"
+            data-desc="A dark magic quill that uses the user's own blood as ink, carving words into their hand."
+            data-link="https://harrypotter.fandom.com/wiki/Black_Quill">
+            <div class="card-image-container">
+                <img src="images/blood_quill.png" alt="Blood Quill">
+            </div>
+            <div class="place-info">
+                <h3>Blood Quill</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="artifact-section-header">
+        <h2>Hogwarts Relics</h2>
+        <p>Magical objects historically tied to or heavily used within Hogwarts School.</p>
+    </div>
+    <div class="places-grid">
+
+        <div class="place-card" onclick="openModal(this)" data-name="Sorting Hat" data-img="images/sorting_hat.png"
+            data-desc="A sentient hat that determines which of the four school Houses each new student belongs most to."
+            data-link="https://harrypotter.fandom.com/wiki/Sorting_Hat">
+            <div class="card-image-container">
+                <img src="images/sorting_hat.png" alt="Sorting Hat">
+            </div>
+            <div class="place-info">
+                <h3>Sorting Hat</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Triwizard Cup" data-img="images/triwizard_cup.png"
+            data-desc="A shining cup awarded to the winner of the Triwizard Tournament."
+            data-link="https://harrypotter.fandom.com/wiki/Triwizard_Cup">
+            <div class="card-image-container">
+                <img src="images/triwizard_cup.png" alt="Triwizard Cup">
+            </div>
+            <div class="place-info">
+                <h3>Triwizard Cup</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Monster Book of Monsters"
+            data-img="images/monster_book.png" data-desc="A vicious textbook used in Care of Magical Creatures."
+            data-link="https://harrypotter.fandom.com/wiki/The_Monster_Book_of_Monsters">
+            <div class="card-image-container">
+                <img src="images/monster_book.png" alt="Monster Book of Monsters">
+            </div>
+            <div class="place-info">
+                <h3>Monster Book of Monsters</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Remembrall" data-img="images/remembrall.png"
+            data-desc="A glass ball that turns red if its owner has forgotten something."
+            data-link="https://harrypotter.fandom.com/wiki/Remembrall">
+            <div class="card-image-container">
+                <img src="images/remembrall.png" alt="Remembrall">
+            </div>
+            <div class="place-info">
+                <h3>Remembrall</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Golden Snitch" data-img="images/golden_snitch.png"
+            data-desc="A small, fast-flying golden ball used in Quidditch."
+            data-link="https://harrypotter.fandom.com/wiki/Golden_Snitch">
+            <div class="card-image-container">
+                <img src="images/golden_snitch.png" alt="Golden Snitch">
+            </div>
+            <div class="place-info">
+                <h3>Golden Snitch</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="artifact-section-header">
+        <h2>Ministry Objects</h2>
+        <p>Specialized wizarding inventions used for investigation, detection, or transportation.</p>
+    </div>
+    <div class="places-grid">
+
+        <div class="place-card" onclick="openModal(this)" data-name="Omnioculars" data-img="images/omnioculars.png"
+            data-desc="Magical binoculars that can replay action, slow it down, and provide a play-by-play."
+            data-link="https://harrypotter.fandom.com/wiki/Omnioculars">
+            <div class="card-image-container">
+                <img src="images/omnioculars.png" alt="Omnioculars">
+            </div>
+            <div class="place-info">
+                <h3>Omnioculars</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Sneakoscope" data-img="images/sneakoscope.png"
+            data-desc="A dark detector that lights up, spins, and whistles when someone untrustworthy is near."
+            data-link="https://harrypotter.fandom.com/wiki/Sneakoscope">
+            <div class="card-image-container">
+                <img src="images/sneakoscope.png" alt="Sneakoscope">
+            </div>
+            <div class="place-info">
+                <h3>Sneakoscope</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Foe-Glass" data-img="images/foe_glass.png"
+            data-desc="A mirror-like dark detector that shows the enemies of its owner."
+            data-link="https://harrypotter.fandom.com/wiki/Foe-Glass">
+            <div class="card-image-container">
+                <img src="images/foe_glass.png" alt="Foe-Glass">
+            </div>
+            <div class="place-info">
+                <h3>Foe-Glass</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Portkey" data-img="images/portkey.png"
+            data-desc="An object enchanted to instantly transport anyone touching it to a specific location."
+            data-link="https://harrypotter.fandom.com/wiki/Portkey">
+            <div class="card-image-container">
+                <img src="images/portkey.png" alt="Portkey">
+            </div>
+            <div class="place-info">
+                <h3>Portkey</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Prophecy Orb" data-img="images/prophecy_orb.png"
+            data-desc="A glass sphere containing a record of a prophecy, kept in the Department of Mysteries."
+            data-link="https://harrypotter.fandom.com/wiki/Prophecy_Record">
+            <div class="card-image-container">
+                <img src="images/prophecy_orb.png" alt="Prophecy Orb">
+            </div>
+            <div class="place-info">
+                <h3>Prophecy Orb</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="artifact-section-header">
+        <h2>Fantastic Beasts Artifacts</h2>
+        <p>Curiosities from the era of Newt Scamander and Gellert Grindelwald.</p>
+    </div>
+    <div class="places-grid">
+
+        <div class="place-card" onclick="openModal(this)" data-name="Newt Scamander's Suitcase"
+            data-img="images/newts_suitcase.png"
+            data-desc="A magically expanded suitcase containing habitats for countless magical creatures."
+            data-link="https://harrypotter.fandom.com/wiki/Newton_Scamander%27s_suitcase">
+            <div class="card-image-container">
+                <img src="images/newts_suitcase.png" alt="Newt Scamander's Suitcase">
+            </div>
+            <div class="place-info">
+                <h3>Newt Scamander's Suitcase</h3>
+            </div>
+        </div>
+
+        <div class="place-card" onclick="openModal(this)" data-name="Blood Pact Pendant"
+            data-img="images/blood_pact.png"
+            data-desc="A magically binding vial containing the mingled blood of two wizards who swore not to fight."
+            data-link="https://harrypotter.fandom.com/wiki/Blood_pact">
+            <div class="card-image-container">
+                <img src="images/blood_pact.png" alt="Blood Pact Pendant">
+            </div>
+            <div class="place-info">
+                <h3>Blood Pact Pendant</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="artifact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Artifact Name</h2>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="">
+                <div class="modal-text-overlay">
+                    <p id="modal-desc">Description goes here...</p>
+                    <a id="modal-link" href="#" target="_blank" class="more-info-link">More Info &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
