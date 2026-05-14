@@ -1,0 +1,454 @@
+#head {
+    width: 100%;
+    height: 220px;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#head img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    margin: 0px;
+    border-width: 5px;
+}
+
+/* Navbar Styles */
+.navbar ul {
+    list-style-type: none;
+    background-color: hsl(0, 0%, 25%);
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar a {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "MedievalSharp", "Cinzel", serif;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: black;
+}
+
+body {
+    margin: 0;
+    background-color: #f8f5e6;
+    font-family: sans-serif;
+    background-image: url('images/artifacts1/artifacts1_bg.png');
+
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+#book {
+    position: relative;
+    width: 100%;
+    min-height: 125vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BOOK IMAGE */
+
+.magic-book {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%) rotate(-1deg);
+
+    width: 65vw;
+    max-width: 900px;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(0 25px 45px rgba(0, 0, 0, 0.75));
+
+    animation: floatBook 6s ease-in-out infinite;
+}
+
+/* FLOATING EFFECT */
+
+@keyframes floatBook {
+
+    0% {
+        transform:
+            translate(-50%, -50%) rotate(-1deg) translateY(0px);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%) rotate(-1deg) translateY(-10px);
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%) rotate(-1deg) translateY(0px);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+
+    .magic-book {
+        width: 70vw;
+        top: 50%;
+    }
+
+}
+
+/* =========================
+   MAIN CIRCLE
+========================= */
+
+.artifact-circle{
+
+    position: absolute;
+
+    width: 175px;
+    height: 175px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    text-decoration: none;
+
+    border: 1px solid rgba(255,215,120,0.75);
+
+    box-shadow:
+    0 0 25px rgba(0,0,0,0.5);
+
+    transform: translate(-50%, -50%);
+
+    transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border 0.45s ease;
+
+    animation: floatCircle 6s ease-in-out infinite;
+
+    backdrop-filter: blur(4px);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.artifact-circle img{
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+
+    filter:
+    brightness(0.95)
+    saturate(1.05);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.circle-overlay {
+    position: absolute;
+    width: 240px;
+    background: transparent;
+    padding: 0;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 30;
+}
+
+/* =========================
+   HOVER LABEL POSITIONING (OUTWARD)
+========================= */
+
+/* Top Circles -> Label ABOVE */
+.hallows .circle-overlay{
+    bottom: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+}
+
+.hallows:hover .circle-overlay{
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Bottom Circles -> Label BELOW */
+
+.relics .circle-overlay{
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-15px);
+}
+
+
+.relics:hover .circle-overlay{
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Right Circles -> Label RIGHT */
+.ancientbooks .circle-overlay,
+.darkartifacts .circle-overlay,
+.legendary .circle-overlay,
+.wands .circle-overlay {
+    left: calc(100% + 15px);
+    top: 50%;
+    transform: translateY(-50%) translateX(-15px);
+}
+
+.ancientbooks:hover .circle-overlay,
+.darkartifacts:hover .circle-overlay,
+.legendary:hover .circle-overlay,
+.wands:hover .circle-overlay {
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Left Circles -> Label LEFT */
+.beasts .circle-overlay,
+.potions .circle-overlay,
+.wheezes .circle-overlay,
+.transport .circle-overlay{
+    right: calc(100% + 15px);
+    top: 50%;
+    transform: translateY(-50%) translateX(15px);
+}
+
+.beasts:hover .circle-overlay,
+.potions:hover .circle-overlay,
+.wheezes:hover .circle-overlay,
+.transport:hover .circle-overlay {
+    transform: translateY(-50%) translateX(0);
+}
+
+
+/* =========================
+   TEXT & MAGICAL SHIMMER
+========================= */
+
+@keyframes shimmerText {
+    0% { text-shadow: 0 0 10px rgba(244, 210, 140, 0.8), 0 0 20px rgba(244, 210, 140, 0.4), 0 2px 4px rgba(0, 0, 0, 0.9); }
+    50% { text-shadow: 0 0 15px rgba(244, 210, 140, 1), 0 0 35px rgba(244, 210, 140, 0.6), 0 0 50px rgba(244, 210, 140, 0.3), 0 2px 4px rgba(0, 0, 0, 0.9); }
+    100% { text-shadow: 0 0 10px rgba(244, 210, 140, 0.8), 0 0 20px rgba(244, 210, 140, 0.4), 0 2px 4px rgba(0, 0, 0, 0.9); }
+}
+
+.artifact-circle:hover .circle-overlay h2 {
+    animation: shimmerText 2s infinite alternate ease-in-out;
+}
+
+.circle-overlay h2 {
+    color: #f4d28c;
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 5px;
+    text-shadow: 0 0 10px rgba(244, 210, 140, 0.8), 0 0 20px rgba(244, 210, 140, 0.4), 0 2px 4px rgba(0,0,0,0.9);
+    letter-spacing: 1.5px;
+    font-family: "Cinzel", serif;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.circle-overlay h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: radial-gradient(circle, rgba(244, 210, 140, 0.8) 0%, transparent 100%);
+    box-shadow: 0 0 8px rgba(244, 210, 140, 0.8);
+}
+
+.circle-overlay p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 12px;
+    width: 100%;
+    margin: 6px 0 0 0;
+    line-height: 1.4;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.artifact-circle:hover{
+
+    transform:
+    translate(-50%, -50%) scale(1.13);
+
+    border:
+    3px solid #ffe7a3;
+
+    box-shadow:
+    0 0 35px rgba(255,215,120,0.45),
+    0 0 80px rgba(255,215,120,0.22);
+}
+
+.artifact-circle:hover img{
+
+    transform: scale(1.08);
+
+    filter:
+    brightness(1.1)
+    saturate(1.15);
+}
+
+.artifact-circle:hover .circle-overlay{
+
+    opacity: 1;
+}
+
+/* =========================
+   FLOATING EFFECT
+========================= */
+
+@keyframes floatCircle{
+
+    0%{
+        transform: translate(-50%, -50%) translateY(0px);
+    }
+
+    50%{
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+
+    100%{
+        transform: translate(-50%, -50%) translateY(0px);
+    }
+}
+
+/* =========================
+   ORBIT POSITIONING (10 NODES)
+========================= */
+
+:root {
+    --radius: 52vmin;
+}
+
+@media (max-width: 900px) {
+    :root {
+        --radius: 46vw;
+    }
+}
+
+.hallows {
+    left: calc(50% + var(--radius) * 0);
+    top: calc(50% + var(--radius) * -1);
+}
+
+.darkartifacts {
+    left: calc(50% + var(--radius) * 0.5878);
+    top: calc(50% + var(--radius) * -0.8090);
+}
+
+.legendary {
+    left: calc(50% + var(--radius) * 0.9511);
+    top: calc(50% + var(--radius) * -0.3090);
+}
+
+.wands {
+    left: calc(50% + var(--radius) * 0.9511);
+    top: calc(50% + var(--radius) * 0.3090);
+}
+
+.ancientbooks {
+    left: calc(50% + var(--radius) * 0.5878);
+    top: calc(50% + var(--radius) * 0.8090);
+}
+
+.relics {
+    left: calc(50% + var(--radius) * 0);
+    top: calc(50% + var(--radius) * 1);
+}
+
+.transport {
+    left: calc(50% + var(--radius) * -0.5878);
+    top: calc(50% + var(--radius) * 0.8090);
+}
+
+.potions {
+    left: calc(50% + var(--radius) * -0.9511);
+    top: calc(50% + var(--radius) * 0.3090);
+}
+
+.wheezes {
+    left: calc(50% + var(--radius) * -0.9511);
+    top: calc(50% + var(--radius) * -0.3090);
+}
+
+.beasts {
+    left: calc(50% + var(--radius) * -0.5878);
+    top: calc(50% + var(--radius) * -0.8090);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .artifact-circle{
+
+        width: 100px;
+        height: 100px;
+    }
+
+    .circle-overlay{
+        width: 160px;
+        padding: 0;
+    }
+
+    .circle-overlay h2{
+        font-size: 12px;
+        padding-bottom: 4px;
+        letter-spacing: 0.5px;
+    }
+
+    .circle-overlay p{
+        font-size: 9px;
+        line-height: 1.2;
+        margin-top: 4px;
+    }
+}

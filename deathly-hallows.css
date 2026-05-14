@@ -1,0 +1,297 @@
+/* =========================
+   BASE STYLES
+========================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121418; /* Deep charcoal / near black */
+    background-image: radial-gradient(circle at center, #1b212c 0%, #121418 70%);
+    background-attachment: fixed;
+    font-family: 'IM Fell English', serif;
+    color: #d1d5db;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================
+   WIZPEDIA STANDARD HEADER 
+========================= */
+
+#head {
+    width: 100%;
+    height: 220px;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#head img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    margin: 0px;
+    border-width: 5px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    background-color: hsl(0, 0%, 25%);
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar a {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "MedievalSharp", "Cinzel", serif;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: black;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hallows-hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    color: #e5cd90; /* Muted Gold */
+    margin: 0 0 15px 0;
+    letter-spacing: 4px;
+    font-weight: 400;
+    text-shadow: 0 0 20px rgba(229, 205, 144, 0.2);
+}
+
+.hero-content p {
+    font-family: 'IM Fell English', serif;
+    font-size: 20px;
+    color: #a1a1aa;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.ornate-divider {
+    width: 150px;
+    height: 1px;
+    background: radial-gradient(circle, rgba(229, 205, 144, 0.6) 0%, transparent 100%);
+    margin: 40px auto;
+    position: relative;
+}
+
+.ornate-divider::after {
+    content: "✧";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #e5cd90;
+    font-size: 14px;
+    background-color: #121418;
+    padding: 0 10px;
+}
+
+/* =========================
+   HISTORY & ORIGIN
+========================= */
+
+.lore-history-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 100px auto;
+}
+
+.history-title {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    color: #e5cd90;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.center-divider {
+    margin: 0 auto 30px auto;
+}
+
+.history-text {
+    font-size: 18px;
+    color: #b0b5be;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.8;
+    font-family: 'IM Fell English', serif;
+}
+
+/* =========================
+   MAIN ARTIFACT SECTIONS
+========================= */
+
+.hallows-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+}
+
+.artifact-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 120px;
+}
+
+.artifact-section.reverse {
+    flex-direction: row-reverse;
+}
+
+/* =========================
+   ARTIFACT IMAGES
+========================= */
+
+.artifact-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.artifact-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    filter: drop-shadow(0 0 25px rgba(138, 169, 206, 0.15)) drop-shadow(0 0 60px rgba(138, 169, 206, 0.05));
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.artifact-img:hover {
+    filter: drop-shadow(0 0 35px rgba(229, 205, 144, 0.25)) drop-shadow(0 0 80px rgba(138, 169, 206, 0.1));
+    transform: scale(1.02) translateY(-5px);
+}
+
+/* =========================
+   LORE TEXT BLOCKS
+========================= */
+
+.artifact-lore {
+    flex: 1;
+    max-width: 500px;
+}
+
+.artifact-lore h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    color: #e5cd90;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.lore-divider {
+    width: 60px;
+    height: 1px;
+    background-color: rgba(229, 205, 144, 0.3);
+    margin-bottom: 25px;
+}
+
+.artifact-lore p {
+    font-size: 18px;
+    color: #b0b5be;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* =========================
+   LORE FOOTER & LINKS
+========================= */
+
+.lore-footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.lore-origin {
+    color: #71717a;
+}
+
+.view-link {
+    color: #e5cd90;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.view-link:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(229, 205, 144, 0.5);
+}
+
+/* =========================
+   PAGE FOOTER
+========================= */
+
+.museum-footer {
+    text-align: center;
+    padding: 20px;
+    color: #52525b;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+    .artifact-section, .artifact-section.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .lore-divider {
+        margin: 0 auto 25px auto;
+    }
+
+    .artifact-lore p {
+        text-align: center;
+    }
+
+    .lore-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
