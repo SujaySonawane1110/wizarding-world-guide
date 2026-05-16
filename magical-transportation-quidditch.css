@@ -1,0 +1,361 @@
+/* =========================
+   BASE STYLES
+========================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0e0d12; /* Deep charcoal */
+    background-image: radial-gradient(circle at center, #1b171e 0%, #0e0d12 70%);
+    background-attachment: fixed;
+    font-family: 'IM Fell English', serif;
+    color: #d1d5db;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================
+   WIZPEDIA STANDARD HEADER 
+========================= */
+
+#head {
+    width: 100%;
+    height: 220px;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    border-color: #2b181c;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#head img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    margin: 0px;
+    border-width: 5px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    background-color: hsl(0, 0%, 25%);
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar a {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "MedievalSharp", "Cinzel", serif;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: black;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at top left, rgba(207, 181, 59, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at top right, rgba(96, 15, 28, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    color: #cfb53b; /* Warm Gold */
+    margin: 0 0 15px 0;
+    letter-spacing: 4px;
+    font-weight: 400;
+    text-shadow: 0 0 25px rgba(207, 181, 59, 0.4);
+}
+
+.hero-content p {
+    font-family: 'IM Fell English', serif;
+    font-size: 20px;
+    color: #b5acb0;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.ornate-divider {
+    width: 150px;
+    height: 1px;
+    background: radial-gradient(circle, rgba(207, 181, 59, 0.6) 0%, transparent 100%);
+    margin: 40px auto;
+    position: relative;
+}
+
+.ornate-divider::after {
+    content: "✧";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #600f1c; /* Deep maroon accent */
+    font-size: 14px;
+    background-color: #0e0d12;
+    padding: 0 10px;
+}
+
+/* =========================
+   HISTORY & ORIGIN
+========================= */
+
+.lore-history-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 100px auto;
+    position: relative;
+}
+
+.history-title {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    color: #cfb53b;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.center-divider {
+    margin: 0 auto 30px auto;
+}
+
+.history-text {
+    font-size: 18px;
+    color: #d1cbd4;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.8;
+    font-family: 'IM Fell English', serif;
+}
+
+/* Category Title styling */
+.category-title {
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+    color: #cfb53b;
+    text-align: center;
+    margin: 120px 0 60px 0;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(207, 181, 59, 0.2);
+}
+
+/* =========================
+   MAIN ARTIFACT SECTIONS
+========================= */
+
+.archive-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+}
+
+.artifact-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 120px;
+}
+
+.artifact-section.reverse {
+    flex-direction: row-reverse;
+}
+
+/* =========================
+   ARTIFACT IMAGES
+========================= */
+
+.artifact-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.artifact-image-container::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(207, 181, 59, 0.15) 0%, transparent 70%); /* Gold glow */
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(25px);
+}
+
+.artifact-section.reverse .artifact-image-container::before {
+    background: radial-gradient(circle, rgba(96, 15, 28, 0.15) 0%, transparent 70%); /* Maroon glow */
+}
+
+/* Windy / dust particles atmosphere effect */
+.artifact-image-container::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    top: 0; left: -25%;
+    background-image: radial-gradient(circle at 20% 30%, rgba(207, 181, 59, 0.3) 1.5px, transparent 1.5px),
+                      radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                      radial-gradient(circle at 80% 40%, rgba(96, 15, 28, 0.3) 2px, transparent 2px);
+    background-size: 150px 100px;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.5;
+    animation: wind-drift 10s linear infinite;
+}
+
+@keyframes wind-drift {
+    0% { transform: translateX(-20px); opacity: 0; }
+    50% { opacity: 0.6; }
+    100% { transform: translateX(20px); opacity: 0; }
+}
+
+.artifact-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    filter: drop-shadow(0 0 25px rgba(96, 15, 28, 0.2)) drop-shadow(0 0 60px rgba(0, 0, 0, 0.8));
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.artifact-img:hover {
+    filter: drop-shadow(0 0 35px rgba(207, 181, 59, 0.3)) drop-shadow(0 0 80px rgba(96, 15, 28, 0.2));
+    transform: scale(1.02) translateY(-5px);
+}
+
+/* =========================
+   LORE TEXT BLOCKS
+========================= */
+
+.artifact-lore {
+    flex: 1;
+    max-width: 500px;
+}
+
+.artifact-lore h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    color: #cfb53b;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.artifact-section.reverse .artifact-lore h2 {
+    color: #a82e41; /* Slightly brighter maroon/red for text readability */
+}
+
+.lore-divider {
+    width: 60px;
+    height: 1px;
+    background-color: rgba(207, 181, 59, 0.3);
+    margin-bottom: 25px;
+}
+
+.artifact-lore p {
+    font-size: 18px;
+    color: #b5acb0;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* =========================
+   LORE FOOTER & LINKS
+========================= */
+
+.lore-footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.lore-origin {
+    color: #a82e41; /* Deep red accent */
+    font-weight: bold;
+}
+
+.view-link {
+    color: #cfb53b;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.view-link:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(207, 181, 59, 0.5);
+}
+
+/* =========================
+   PAGE FOOTER
+========================= */
+
+.museum-footer {
+    text-align: center;
+    padding: 20px;
+    color: #5d5459;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+    .artifact-section, .artifact-section.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .lore-divider {
+        margin: 0 auto 25px auto;
+    }
+
+    .artifact-lore p {
+        text-align: center;
+    }
+
+    .lore-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
