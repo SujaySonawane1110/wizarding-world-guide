@@ -1,74 +1,103 @@
-.chbg {
-    text-align: center;
-    font-size: 75px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: black;
-    padding-bottom: 50px;
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
+/* ==========================================================================
+   WIZPEDIA CHARACTERS STYLESHEET
+   ========================================================================== */
+
+/* Page Background and Base Setup (Fully Preserved) */
+body {
+    margin: 0px;
+    background-color: #f8f5e6;
+    background-image: url('images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    color: #3e2723;
 }
-
-.page-container {
-    display: flex;
-    min-height: 100px;
-}
-
-.sidebar {
-    width: 15%;
-    background-color: #333;
-    padding: 10px;
-    padding-left: 0px;
-    flex-shrink: 0;
-    border-right: 3px solid black;
-    position: sticky;
-    top: 60px;
-    /* Stick to the very top edge of the screen */
-    height: 100%;
-    /* Make it fill the full height of the view */
-    overflow-y: hidden;
-    padding-bottom: 5px;
-}
-
-.sidebar a {
-    display: block;
-    /* isse vertically aaate hai */
-    color: #fff;
-    text-decoration: none;
-    padding: 18px 0;
-    /*vertical,horizontal*/
-    font-size: 20px;
-    font-family: "IM Fell French Canon SC", serif;
-    font-weight: 400;
-    font-style: normal;
-    border-bottom: 1px solid #444;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    background-color: #555;
-    color: #d4af37;
-    padding-left: 30px;
-}
-
-
-.desc {
-    flex-grow: 1;
-    padding: 40px;
-}
-
 
 * {
     scroll-behavior: smooth;
-    scroll-margin-top: 140px;
+    box-sizing: border-box;
 }
 
-#desc {
-    margin: 50px;
+/* Links Behavior (Fully Preserved) */
+a:link {
+    color: white;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    color: #FFD700;
+}
+a:active {
+    color: #0000FF;
 }
 
+/* ==========================================================================
+   WIZPEDIA STANDARD HEADER & NAVBAR (Fully Preserved Styles)
+   ========================================================================== */
 
-/* body { font-family: sans-serif; padding-bottom: 500px; } */
+#head {
+    width: 100%;
+    height: 220px;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#head img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    margin: 0px;
+    border-width: 5px;
+}
+
+.navbar1 ul {
+    list-style-type: none;
+    background-color: hsl(0, 0%, 25%);
+    padding: 10px;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    justify-content: space-evenly;
+}
+
+.navbar1 a {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    font-family: "MedievalSharp", "Cinzel", serif;
+}
+
+.navbar1 a:hover {
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.navbar1 li {
+    float: left;
+}
+
+/* ==========================================================================
+   SEARCH BAR AREA (Fully Preserved Styles)
+   ========================================================================== */
+
 .search-area {
     position: fixed;
     top: 20px;
@@ -138,180 +167,258 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.character-section {
-    margin-top: 100px;
+/* ==========================================================================
+   CAROUSEL HUB LAYOUT (NEW STYLES)
+   ========================================================================== */
+
+.carousel-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto 80px auto;
     padding: 20px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-body {
-    background-image: url('images/bg.jpg');
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-#desc p {
-    font-family: "IM Fell French Canon SC", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 25px;
-}
-
-.info-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 200px;
 }
 
-.info-container p {
-    flex: 1;
-    margin: 0;
-
+/* Header within Hub Page */
+.carousel-header {
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-
-.char-img {
-    width: 200px;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid #444;
-
-}
-
-#desc h3 {
-    font-size: 30px;
-}
-
-#desc h1 {
-    font-family: "Crimson Text", serif;
-    font-weight: 800;
+.hub-title {
+    font-family: 'Cinzel', serif;
     font-size: 45px;
+    color: #4a3623;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.hub-subtitle {
+    font-family: "IM Fell French Canon SC", serif;
+    font-size: 22px;
+    color: #5d4037;
+    margin: 0;
     font-style: italic;
 }
 
-.chrc h3 {
-    margin-bottom: 0;
-    margin-top: 30px;
-    font-family: "Crimson Text", serif;
-    font-weight: 600;
-    font-style: normal;
-}
-
-.left-content {
-    flex: 1;
-    /* Takes up all available space */
-    padding-right: 20px;
-}
-
-.stat-table {
-    margin-top: 15px;
-    font-size: 15px;
-    border-collapse: collapse;
+/* Carousel Outer Wrapper */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    max-width: 400px;
-    /* Prevents it from getting too wide */
-    /* background-color: #fff; */
-    /* border: 1px solid #3f3f3f; */
-    border-radius: 5px;
-    font-family: "IM Fell French Canon SC", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
+    max-width: 950px;
+    position: relative;
+    margin: 20px 0;
 }
 
-.stat-table td {
-    padding: 5px 10px;
-    /* border-bottom: 1px solid #3f3f3f; */
-}
-
-.stat-table strong {
-    color: #000000;
-}
-
-
-#head {
-    width: 100%;
-    height: 220px;
-    margin: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 0;
-    display: block;
-    line-height: 0;
+/* Viewport to restrict view to 3 cards */
+.carousel-viewport {
+    width: 760px; /* Exact size for 3 cards of 220px + gaps of 30px */
     overflow: hidden;
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
+    position: relative;
+    padding: 30px 0; /* Add padding so scale doesn't clip */
 }
 
-#head img {
+/* Scroll Track */
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    width: max-content;
+}
+
+/* Group Card Styling */
+.carousel-card {
+    display: block;
+    width: 220px;
+    height: 280px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: 3px solid #8b5a2b;
+    overflow: hidden;
+    position: relative;
+    background-color: #2b1a0a;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.5s ease,
+                box-shadow 0.5s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.card-image-wrapper {
     width: 100%;
     height: 100%;
-    display: block;
+    position: relative;
+}
+
+.carousel-card img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: center center;
-    margin: 0px;
-    border-width: 5px;
-}
-
-.navbar1 ul {
-    list-style-type: none;
-    background-color: hsl(0, 0%, 25%);
-    padding: 10px;
-    margin: 0px;
-    overflow: hidden;
-    display: flex;
-    /* width: 100%; */
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    justify-content: space-evenly;
-}
-
-.navbar1 a {
-    color: white;
-    text-align: center;
-    padding: 15px;
-    text-decoration: none;
     display: block;
-    font-size: 20px;
-    font-family: "MedievalSharp", "Cinzel", serif;
+    transition: transform 0.6s ease;
 }
 
-.navbar1 a:hover {
-    background-color: rgb(0, 0, 0);
-    /* padding-left: 50px;
-    padding-right: 50px; */
+/* Card States: Active vs Passive */
+
+/* Center Active Card: Enlarge & highlight */
+.carousel-card.active {
+    transform: scale(1.15);
+    opacity: 1;
+    border-color: #d4af37; /* Wizarding Gold */
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 
+                0 10px 25px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+.carousel-card.active img {
+    transform: scale(1.05);
+}
+
+/* Side Passive Cards: Shrunk & faded */
+.carousel-card:not(.active) {
+    transform: scale(0.9);
+    opacity: 0.5;
+    z-index: 5;
+}
+
+/* Hover effects for side cards */
+.carousel-card:not(.active):hover {
+    opacity: 0.85;
+    transform: scale(0.95);
+    border-color: #cfa25d;
+}
+
+/* Carousel Buttons (vintage fantasy design) */
+.carousel-btn {
+    background: #4a3623;
+    color: #f4ecd8;
+    border: 2px solid #8b5a2b;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 32px;
+    line-height: 48px;
+    font-family: monospace;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 0 5px rgba(244, 236, 216, 0.2);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    user-select: none;
 }
 
-.navbar1 li {
-    float: left;
+.carousel-btn:hover {
+    background: #3e2723;
+    border-color: #d4af37;
+    color: #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4), 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-body {
-    margin: 0px;
-    background-color: #f8f5e6;
-    font-family: sans-serif;
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
-a:link {
-    color: white;
+.prev-btn {
+    left: -70px;
 }
 
-a:visited {
-    text-decoration: none;
+.next-btn {
+    right: -70px;
 }
 
-a:hover {
-    color: #FFD700;
+/* Active Group Title Displayed Below Carousel */
+#active-group-name {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    color: #4a3623;
+    text-align: center;
+    margin-top: 40px;
+    min-height: 45px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(248, 245, 230, 0.8), 0 0 10px rgba(212, 175, 55, 0.2);
+    animation: fadeIn 0.4s ease;
 }
 
-a:active {
-    color: #0000FF;
+/* Ornate Divider */
+.ornate-divider {
+    width: 250px;
+    height: 2px;
+    background: radial-gradient(circle, rgba(139, 90, 43, 0.6) 0%, transparent 100%);
+    margin: 40px auto;
+    position: relative;
+}
+
+.ornate-divider::after {
+    content: "✧";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #8b5a2b;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 0 10px;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 950px) {
+    .carousel-viewport {
+        width: 480px; /* Only 2 cards showing on tablets */
+    }
+    .prev-btn {
+        left: -10px;
+    }
+    .next-btn {
+        right: -10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hub-title {
+        font-size: 32px;
+    }
+    .carousel-viewport {
+        width: 240px; /* Only 1 card showing on mobile */
+    }
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+    }
+    .prev-btn {
+        left: 5px;
+    }
+    .next-btn {
+        right: 5px;
+    }
 }
