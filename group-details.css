@@ -5,7 +5,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #0e0f12; /* Charcoal black / ancient stone shadow */
+    background-color: #0e0f12;
+    /* Charcoal black / ancient stone shadow */
     background-image: radial-gradient(circle at center, #1c1e22 0%, #0e0f12 70%);
     background-attachment: fixed;
     font-family: 'IM Fell English', serif;
@@ -81,15 +82,20 @@ body {
 .hero::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at top, rgba(122, 31, 40, 0.08) 0%, transparent 60%); /* Subtle burgundy tint */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top, rgba(122, 31, 40, 0.08) 0%, transparent 60%);
+    /* Subtle burgundy tint */
     pointer-events: none;
 }
 
 .hero-content h1 {
     font-family: 'Cinzel', serif;
     font-size: 48px;
-    color: #cfa25d; /* Muted Gold */
+    color: #cfa25d;
+    /* Muted Gold */
     margin: 0 0 15px 0;
     letter-spacing: 4px;
     font-weight: 400;
@@ -119,7 +125,8 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: #7a1f28; /* Burgundy accent */
+    color: #7a1f28;
+    /* Burgundy accent */
     font-size: 14px;
     background-color: #0e0f12;
     padding: 0 10px;
@@ -185,7 +192,8 @@ body {
     justify-content: space-between;
     gap: 60px;
     margin-bottom: 120px;
-    scroll-margin-top: 100px; /* Offset for anchor links so standard navbar doesn't cover them */
+    scroll-margin-top: 100px;
+    /* Offset for anchor links so standard navbar doesn't cover them */
 }
 
 .artifact-section.reverse {
@@ -209,7 +217,8 @@ body {
     position: absolute;
     width: 300px;
     height: 380px;
-    background: radial-gradient(circle, rgba(217, 184, 123, 0.12) 0%, transparent 70%); /* Warm candlelight glow */
+    background: radial-gradient(circle, rgba(217, 184, 123, 0.12) 0%, transparent 70%);
+    /* Warm candlelight glow */
     z-index: -1;
     border-radius: 50%;
     filter: blur(25px);
@@ -281,7 +290,8 @@ body {
 }
 
 .lore-origin {
-    color: #7a1f28; /* Burgundy accent */
+    color: #7a1f28;
+    /* Burgundy accent */
     font-weight: bold;
     background: rgba(122, 31, 40, 0.1);
     padding: 4px 8px;
@@ -318,7 +328,9 @@ body {
 ========================= */
 
 @media (max-width: 900px) {
-    .artifact-section, .artifact-section.reverse {
+
+    .artifact-section,
+    .artifact-section.reverse {
         flex-direction: column;
         text-align: center;
         gap: 40px;
