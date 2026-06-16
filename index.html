@@ -1,73 +1,355 @@
 <!DOCTYPE html>
-<html>
+<html class="homepage-active" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizpedia — The Wizarding World Encyclopedia</title>
+    <meta name="description" content="Wizpedia is your magical gateway to the complete Wizarding World encyclopedia. Explore characters, spells, places, creatures, artifacts, and Hogwarts houses.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:wght@300;400;500;600;700&family=MedievalSharp&display=swap" rel="stylesheet">
+
+    <!-- Shared Styles (header/navbar) -->
     <link rel="stylesheet" href="wwmain.css">
-    <head>
-        <title>The Wizarding World Guide</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=MedievalSharp&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div id="head">
-            <img src="images/wizpedia_head.jpeg" alt="Wizpedia Header">
+    <!-- Homepage Styles -->
+    <link rel="stylesheet" href="homepage.css">
+
+    <!-- GSAP + Plugins (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
+    <script src="homepage.js" defer></script>
+</head>
+<body>
+    <!-- ═══════════════════════════════════════════════
+         PRESERVED HEADER — Exact original design
+         ═══════════════════════════════════════════════ -->
+    <div id="head">
+        <img src="images/wizpedia_head.jpeg" alt="Wizpedia Header">
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="characters.html">CHARACTERS</a></li>
+            <li><a href="places.html">PLACES</a></li>
+            <li><a href="magic.html">MAGIC</a></li>
+            <li><a href="artifacts1.html">ARTIFACTS</a></li>
+        </ul>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════
+         OWL FLYER — Fixed positioned, animated via GSAP
+         ═══════════════════════════════════════════════ -->
+    <div class="owl-flyer" id="owlFlyer">
+        <!-- Hedwig-style white snowy owl SVG -->
+        <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Body -->
+            <ellipse cx="100" cy="90" rx="28" ry="35" fill="#f0ece4" stroke="#d5d0c8" stroke-width="1"/>
+            <!-- Chest feather markings -->
+            <ellipse cx="100" cy="85" rx="18" ry="22" fill="#faf8f5" opacity="0.6"/>
+            <path d="M92 75 Q100 78 108 75 Q100 82 92 75Z" fill="#e0dcd5" opacity="0.4"/>
+            <path d="M90 85 Q100 89 110 85 Q100 93 90 85Z" fill="#e0dcd5" opacity="0.3"/>
+            <path d="M91 95 Q100 99 109 95 Q100 103 91 95Z" fill="#e0dcd5" opacity="0.25"/>
+            <!-- Head -->
+            <circle cx="100" cy="58" r="18" fill="#f5f1ea" stroke="#d5d0c8" stroke-width="0.8"/>
+            <!-- Facial disc -->
+            <ellipse cx="100" cy="60" rx="15" ry="13" fill="#faf8f5" opacity="0.5"/>
+            <!-- Eyes -->
+            <circle cx="92" cy="56" r="5.5" fill="#f5c518"/>
+            <circle cx="108" cy="56" r="5.5" fill="#f5c518"/>
+            <circle cx="92" cy="56" r="2.8" fill="#1a1a1a"/>
+            <circle cx="108" cy="56" r="2.8" fill="#1a1a1a"/>
+            <circle cx="93.2" cy="54.8" r="1.2" fill="white" opacity="0.9"/>
+            <circle cx="109.2" cy="54.8" r="1.2" fill="white" opacity="0.9"/>
+            <!-- Eye brows / feather tufts -->
+            <path d="M86 51 Q89 48 95 52" stroke="#c0b8a8" stroke-width="1.5" fill="none"/>
+            <path d="M114 51 Q111 48 105 52" stroke="#c0b8a8" stroke-width="1.5" fill="none"/>
+            <!-- Beak -->
+            <path d="M97 62 L100 68 L103 62 Z" fill="#4a4a4a"/>
+            <!-- Left Wing (spread wide) -->
+            <path d="M72 85 Q30 50 10 30 Q20 50 15 65 Q25 55 35 60 Q30 68 38 70 Q35 76 45 75 Q42 82 52 80 Q50 88 60 85 Q58 92 68 88 Z" fill="#f0ece4" stroke="#d5d0c8" stroke-width="0.8"/>
+            <!-- Left wing feather details -->
+            <path d="M55 70 Q45 55 20 38" stroke="#d5d0c8" stroke-width="0.6" fill="none" opacity="0.6"/>
+            <path d="M60 78 Q50 65 30 52" stroke="#d5d0c8" stroke-width="0.6" fill="none" opacity="0.5"/>
+            <path d="M65 84 Q55 72 40 62" stroke="#d5d0c8" stroke-width="0.6" fill="none" opacity="0.4"/>
+            <!-- Speckle markings on left wing -->
+            <circle cx="40" cy="55" r="1.5" fill="#c0b8a8" opacity="0.4"/>
+            <circle cx="50" cy="65" r="1.2" fill="#c0b8a8" opacity="0.35"/>
+            <circle cx="35" cy="62" r="1" fill="#c0b8a8" opacity="0.3"/>
+            <circle cx="55" cy="58" r="1.3" fill="#c0b8a8" opacity="0.3"/>
+            <!-- Right Wing (spread wide) -->
+            <path d="M128 85 Q170 50 190 30 Q180 50 185 65 Q175 55 165 60 Q170 68 162 70 Q165 76 155 75 Q158 82 148 80 Q150 88 140 85 Q142 92 132 88 Z" fill="#f0ece4" stroke="#d5d0c8" stroke-width="0.8"/>
+            <!-- Right wing feather details -->
+            <path d="M145 70 Q155 55 180 38" stroke="#d5d0c8" stroke-width="0.6" fill="none" opacity="0.6"/>
+            <path d="M140 78 Q150 65 170 52" stroke="#d5d0c8" stroke-width="0.6" fill="none" opacity="0.5"/>
+            <path d="M135 84 Q145 72 160 62" stroke="#d5d0c8" stroke-width="0.6" fill="none" opacity="0.4"/>
+            <!-- Speckle markings on right wing -->
+            <circle cx="160" cy="55" r="1.5" fill="#c0b8a8" opacity="0.4"/>
+            <circle cx="150" cy="65" r="1.2" fill="#c0b8a8" opacity="0.35"/>
+            <circle cx="165" cy="62" r="1" fill="#c0b8a8" opacity="0.3"/>
+            <circle cx="145" cy="58" r="1.3" fill="#c0b8a8" opacity="0.3"/>
+            <!-- Tail feathers -->
+            <path d="M90 120 Q95 135 92 145 Q98 138 100 145 Q102 138 108 145 Q105 135 110 120 Z" fill="#ede8e0" stroke="#d5d0c8" stroke-width="0.6"/>
+            <!-- Feet (tucked in flight) -->
+            <path d="M93 118 L90 128 M95 118 L93 128" stroke="#4a4a4a" stroke-width="1.2" fill="none"/>
+            <path d="M107 118 L110 128 M105 118 L107 128" stroke="#4a4a4a" stroke-width="1.2" fill="none"/>
+            <!-- Magical sparkle trail -->
+            <circle cx="25" cy="60" r="2" fill="#c0d8ff" opacity="0.6">
+                <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="40" cy="45" r="1.5" fill="#d0e0ff" opacity="0.4">
+                <animate attributeName="opacity" values="0.4;0;0.4" dur="1.8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="170" cy="50" r="1.8" fill="#c0d8ff" opacity="0.5">
+                <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="160" cy="40" r="1.2" fill="#d0e0ff" opacity="0.35">
+                <animate attributeName="opacity" values="0.35;0;0.35" dur="1.6s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 1: HERO
+         ═══════════════════════════════════════════════ -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg">
+            <img src="images/hero_bg.png" alt="" aria-hidden="true">
         </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="characters.html">CHARACTERS</a></li>
-                <li><a href="places.html">PLACES</a></li>
-                <li><a href="magic.html">MAGIC</a></li>
-                <li><a href="artifacts1.html">ARTIFACTS</a></li>
-            </ul>
-        </nav>
-        <div class="intro">
-            <h1 align = "center">Welcome to the Archives</h1>
-            <p>You have opened the ultimate guide to the Wizarding World. From the cobblestones of Diagon Alley to the secrets of the Forbidden Forest, explore the history, spells, and legends that shape our world.</p>
+
+        <!-- Ambient floating particles (CSS-only) -->
+        <div class="hero-ambient" id="heroAmbient"></div>
+
+        <div class="hero-content">
+            <h1>Welcome to Wizpedia</h1>
+            <p class="hero-subtitle">
+                Your magical gateway to the complete Wizarding World encyclopedia.<br>
+                Discover characters, master spells, explore enchanted places, and uncover the secrets of the magical realm.
+            </p>
+            <a href="#discover" class="cta-btn" id="ctaBtn">Start Exploring</a>
         </div>
 
-        <div class="card-container">
-            <div class="card2">
-                <h2>Featured Character</h2>
-                <img src="images/Harry_Potter_character_poster.jpg" alt="Harry_potter" width="200">
-                <h2>Harry James Potter</h2>
-                <p><strong>House:</strong> Gryffindor<br>The "Boy Who Lived" is the only known survivor of the Killing Curse. 
-                Famous for his courage and leadership, he captained the Gryffindor Quidditch team and led Dumbledore's Army against the Dark Arts.</p>
-            </div>
-            <div class="card1">
-                <h2>Featured Character</h2>
-                <img src="images/download.jpeg" alt="Hermione_Granger" width="200">
-                <h2>Hermione Granger</h2>
-                <p><strong>House:</strong> Gryffindor<br>A Muggle-born witch of extraordinary talent and intellect .Known for her quick wit and encyclopedic knowledge of spells, she is often the logical voice that saves the trio from disaster.</p>
-            </div>
-            <div class="card">
-                <h2>Featured Character</h2>
-                <img src="images/download (1).jpeg" alt="Ron" width="100%">
-                <h2>Ron Weasley</h2>
-                <p class="card-desc">
-                <strong>House:</strong> Gryffindor<br>
-                A pure-blood wizard from the famous Weasley family. Though he often feels overshadowed by his brothers, his fierce loyalty, bravery, and strategic skill in Wizard's Chess proved vital in the defeat of Voldemort.
-                </p>
+        <div class="scroll-indicator" id="scrollIndicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 2: WHAT YOU CAN FIND — Horizontal Scroll
+         ═══════════════════════════════════════════════ -->
+    <section id="discover" class="discover-section">
+        <div class="discover-pin-wrap">
+            <h2>What You Can Find on Wizpedia</h2>
+            <div class="discover-track-container">
+                <div class="discover-track" id="discoverTrack">
+
+                    <!-- Card 1: Characters -->
+                    <div class="discover-card">
+                        <div class="discover-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        </div>
+                        <h3>Characters</h3>
+                        <p>From the Boy Who Lived to the Dark Lord himself — explore every witch, wizard, and magical being in the Wizarding World.</p>
+                    </div>
+
+                    <!-- Card 2: Spells -->
+                    <div class="discover-card">
+                        <div class="discover-icon">
+                            <svg viewBox="0 0 24 24"><path d="M7.5 5.6L5 7l1.4 1.4 2.5-1.4L7.5 5.6zM13 1h-2v3h2V1zm7 7l-1.4-1.4-2.5 1.4L17.5 9.4 20 8zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm-1 4h2v3h-2v-3zm-7-4H1v-2h3v2zm17 0h3v-2h-3v2z"/></svg>
+                        </div>
+                        <h3>Spells</h3>
+                        <p>Master every incantation from Expelliarmus to Expecto Patronum. Learn the wand movements, effects, and history behind each spell.</p>
+                    </div>
+
+                    <!-- Card 3: Places -->
+                    <div class="discover-card">
+                        <div class="discover-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <h3>Places</h3>
+                        <p>Wander through Hogwarts, Hogsmeade, Diagon Alley, and beyond. Every magical location mapped and detailed.</p>
+                    </div>
+
+                    <!-- Card 4: Magical Creatures -->
+                    <div class="discover-card">
+                        <div class="discover-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 3c-1.11 0-2.04.73-2.36 1.73C17.42 3.05 15.58 2 14 2c-1.06 0-2.05.4-2.82 1.06C10.28 2 9 1 7.5 1 5.02 1 3 3.02 3 5.5c0 .98.33 1.88.86 2.63C2.75 8.89 2 10.1 2 11.5 2 13.99 4.01 16 6.5 16c.93 0 1.78-.28 2.5-.76.72.48 1.57.76 2.5.76s1.78-.28 2.5-.76c.72.48 1.57.76 2.5.76 2.49 0 4.5-2.01 4.5-4.5 0-1.4-.75-2.61-1.86-3.37.53-.75.86-1.65.86-2.63C20 4.12 20.88 3 21 3zm-4.5 11c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM6.5 14c-.83 0-1.5-.67-1.5-1.5S5.67 11 6.5 11s1.5.67 1.5 1.5S7.33 14 6.5 14zM4 21h16v2H4v-2z"/></svg>
+                        </div>
+                        <h3>Magical Creatures</h3>
+                        <p>Hippogriffs, dragons, phoenixes, and house-elves — discover every fantastic beast that roams the magical world.</p>
+                    </div>
+
+                    <!-- Card 5: Artifacts -->
+                    <div class="discover-card">
+                        <div class="discover-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+                        </div>
+                        <h3>Artifacts</h3>
+                        <p>The Elder Wand, Invisibility Cloak, Horcruxes, and more. Uncover the legendary objects that shaped wizarding history.</p>
+                    </div>
+
+                    <!-- Card 6: Houses -->
+                    <div class="discover-card">
+                        <div class="discover-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14 6V4h-4v2H6V2H4v4H2v2h2v12h7v-4h2v4h7V8h2V6h-2V2h-2v4h-4zM8 18H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V8h2v2zm4 4h-2v-2h2v2zm0-4h-2V8h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V8h2v2z"/></svg>
+                        </div>
+                        <h3>Houses</h3>
+                        <p>Gryffindor, Slytherin, Ravenclaw, and Hufflepuff — dive deep into the traits, history, and notable members of each Hogwarts house.</p>
+                    </div>
+
+                </div>
             </div>
         </div>
+        <div class="bg-glow bg-glow-1"></div>
+    </section>
 
-        <div class="spell">
-            <h2>Spell of the Day</h2>
-            <h1 class="incantation">Wingardium Leviosa</h1>
-            <div class="spell-text">
-                <p><strong>The Levitation Charm</strong> is one of the first spells learnt by young witches and wizards. It allows the caster to make objects fly or levitate for a limited period of time.</p>
-                <h3>🪄 Casting Instruction</h3>
-                <p>The charm requires the "Swish and Flick" wrist movement. As Professor Flitwick famously instructed: <em>"And saying the magic words properly is very important, too—never forget Wizard Baruffio, who said 's' instead of 'f' and found himself on the floor with a buffalo on his chest."</em></p>
+    <div class="section-divider"></div>
 
-                <h3>📜 Etymology</h3>
-                <p>The incantation comes from a mix of English and Latin. "Wing" (English for fly), "Arduus" (Latin for high), and "Levare" (Latin for lift). Literally, it means "lift up high."</p>
+    <!-- ═══════════════════════════════════════════════
+         SECTION 3: EXPLORE CATEGORIES — 2×2 Grid
+         ═══════════════════════════════════════════════ -->
+    <section id="categories" class="categories-section">
+        <h2 class="reveal-up">Explore Categories</h2>
+        <div class="categories-grid">
+            <a href="characters.html" class="category-card" id="catCard1">
+                <div class="category-card-image">
+                    <img src="images/cat_characters.png" alt="Characters Category">
+                </div>
+                <div class="category-card-content">
+                    <h3>Characters</h3>
+                    <p>Explore the heroes, villains, and everyone in between. Detailed profiles of every character in the Wizarding World.</p>
+                </div>
+            </a>
+            <a href="magic.html" class="category-card" id="catCard2">
+                <div class="category-card-image">
+                    <img src="images/cat_spells.png" alt="Spells Category">
+                </div>
+                <div class="category-card-content">
+                    <h3>Spells</h3>
+                    <p>A complete grimoire of charms, hexes, curses, and jinxes. Every incantation documented with effects and lore.</p>
+                </div>
+            </a>
+            <a href="places.html" class="category-card" id="catCard3">
+                <div class="category-card-image">
+                    <img src="images/cat_places.png" alt="Places Category">
+                </div>
+                <div class="category-card-content">
+                    <h3>Places</h3>
+                    <p>Navigate the enchanted locations of the magical realm — from grand castles to hidden alleyways and forbidden forests.</p>
+                </div>
+            </a>
+            <a href="artifacts1.html" class="category-card" id="catCard4">
+                <div class="category-card-image">
+                    <img src="images/cat_artifacts.png" alt="Artifacts Category">
+                </div>
+                <div class="category-card-content">
+                    <h3>Artifacts</h3>
+                    <p>Discover the mysterious magical artifacts in the wizarding world — from the Deathly Hallows to Horcruxes.</p>
+                </div>
+            </a>
+        </div>
+        <div class="bg-glow bg-glow-2 bg-glow-blue"></div>
+    </section>
 
-                <h3>⚡ Famous Uses</h3>
-                <p>In 1991, Ronald Weasley used this charm to defeat a Mountain Troll in the girls' bathroom, levitating the troll's own club and dropping it on its head to save Hermione Granger.</p>
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 4: WHY USE WIZPEDIA — Pinned Slides
+         ═══════════════════════════════════════════════ -->
+    <section id="why" class="why-section">
+        <div class="why-pin-wrap">
+            <h2 class="reveal-up">Why Use Wizpedia?</h2>
+            <div class="why-slides-viewport" id="whyViewport">
+                <!-- Slide 1: Fast Search -->
+                <div class="why-slide" data-index="0">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    </div>
+                    <h3>Fast Search</h3>
+                    <p>Find any character, spell, or location in seconds. Our search is designed to get you answers as quickly as a Summoning Charm.</p>
+                </div>
+                <!-- Slide 2: Easy Navigation -->
+                <div class="why-slide" data-index="1">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+                    </div>
+                    <h3>Easy Navigation</h3>
+                    <p>Navigate through the Wizarding World as smoothly as riding a broomstick. Every section is just a click away.</p>
+                </div>
+                <!-- Slide 3: Organized Information -->
+                <div class="why-slide" data-index="2">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+                    </div>
+                    <h3>Organized Information</h3>
+                    <p>Everything catalogued with the precision of a Hogwarts librarian. Neatly sorted categories make discovery effortless.</p>
+                </div>
+                <!-- Slide 4: Fun & Engaging -->
+                <div class="why-slide" data-index="3">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+                    </div>
+                    <h3>Fun & Engaging</h3>
+                    <p>Learning about the Wizarding World should feel magical. Stunning visuals and immersive design make every visit an adventure.</p>
+                </div>
+            </div>
+            <div class="why-progress" id="whyProgress">
+                <div class="why-dot active" data-index="0"></div>
+                <div class="why-dot" data-index="1"></div>
+                <div class="why-dot" data-index="2"></div>
+                <div class="why-dot" data-index="3"></div>
             </div>
         </div>
+        <div class="bg-glow bg-glow-1 bg-glow-blue"></div>
+    </section>
 
+    <div class="section-divider"></div>
 
+    <!-- ═══════════════════════════════════════════════
+         SECTION 5: ABOUT ME
+         ═══════════════════════════════════════════════ -->
+    <section id="about" class="about-section">
+        <h2 class="reveal-up">About the Creator</h2>
+        <div class="about-card" id="aboutCard">
+            <div class="about-avatar">
+                <!-- Wizard hat icon as placeholder avatar -->
+                <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+            </div>
+            <h3 class="about-name">The Creator</h3>
+            <p class="about-title">Wizarding World Enthusiast & Developer</p>
+            <p class="about-bio">
+                A passionate developer and lifelong Potterhead who built Wizpedia as a love letter to the Wizarding World.
+                This project brings together the magic of storytelling with modern web development to create the ultimate
+                magical encyclopedia. Every spell documented, every character profiled, every place mapped — because
+                the magic never ends.
+            </p>
+            <div class="about-links">
+                <a href="#" class="about-link-btn" id="linkLinkedIn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="#" class="about-link-btn" id="linkGitHub" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                    GitHub
+                </a>
+                <a href="#" class="about-link-btn" id="linkPortfolio" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    Portfolio
+                </a>
+            </div>
+        </div>
+        <div class="bg-glow bg-glow-2"></div>
+    </section>
 
+    <!-- ═══════════════════════════════════════════════
+         SECTION 6: LOOP-BACK
+         ═══════════════════════════════════════════════ -->
+    <section id="loop-back" class="loop-section">
+        <p class="loop-text" id="loopText">✦ The magic never ends... ✦</p>
+    </section>
 
-    </body>
+</body>
 </html>
