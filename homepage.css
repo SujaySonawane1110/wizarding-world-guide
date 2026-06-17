@@ -542,11 +542,230 @@ html.homepage-active {
 }
 
 /* ============================================================
-   SECTION 5: ABOUT ME
+   SECTION 5: CHARACTER GROUPS HUB — Horizontal Scroll
    ============================================================ */
-/* ═══════════════════════════════════════════════════════════
-   SECTION 5: ABOUT — Handcrafted Magical Journal
-   ═══════════════════════════════════════════════════════════ */
+
+.character-groups-section {
+  position: relative;
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, var(--wiz-dark) 0%, var(--wiz-blue) 50%, var(--wiz-dark) 100%);
+  overflow: visible;
+  min-height: 120vh;
+}
+
+.character-groups-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.character-groups-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--wiz-gold);
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 30px rgba(212,175,55,0.2);
+}
+
+.character-groups-header p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--wiz-text-dim);
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.character-groups-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Dynamic Title & Description */
+.groups-info {
+  text-align: center;
+  margin-bottom: 2rem;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.groups-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--wiz-gold-light);
+  margin: 0 0 0.8rem 0;
+  letter-spacing: 0.05em;
+  min-height: 2.5rem;
+  animation: titleSwap 0.6s ease-in-out;
+}
+
+.groups-description {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--wiz-text);
+  margin: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  min-height: 2.5rem;
+  animation: descriptionSwap 0.6s ease-in-out;
+}
+
+@keyframes titleSwap {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes descriptionSwap {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Viewport and Track */
+.groups-viewport {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.groups-track {
+  display: flex;
+  gap: 1.5rem;
+  height: 100%;
+  padding: 0 20%;
+  will-change: transform;
+}
+
+.group-card {
+  flex: 0 0 280px;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(26,42,74,0.3));
+  border: 2px solid var(--wiz-card-border);
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  opacity: 0.6;
+  transform: scale(0.85);
+}
+
+.group-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(212,175,55,0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.group-card.active {
+  opacity: 1;
+  transform: scale(1);
+  border-color: var(--wiz-gold);
+  box-shadow: 
+    0 0 30px rgba(212,175,55,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.group-card:not(.active):hover {
+  opacity: 0.75;
+  transform: scale(0.9);
+}
+
+.card-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(212,175,55,0.2));
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--wiz-gold);
+  margin: 0 0 0.4rem 0;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.card-members {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--wiz-text-dim);
+  margin: 0 0 0.8rem 0;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.card-description {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--wiz-text);
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* Progress Indicator */
+.groups-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+.progress-bar {
+  width: 300px;
+  height: 4px;
+  background: rgba(212,175,55,0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--wiz-gold), var(--wiz-gold-light));
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 15px rgba(212,175,55,0.4);
+}
+
+.progress-text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--wiz-text-dim);
+  margin: 0;
+  letter-spacing: 0.05em;
+  min-width: 60px;
+}
+
+/* ============================================================
+   SECTION 6: ABOUT ME
+   ============================================================ */
 
 .about-section {
   position: relative;

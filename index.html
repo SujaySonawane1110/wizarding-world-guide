@@ -309,7 +309,124 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════════════════════════════════
-         SECTION 5: ABOUT ME — Handcrafted Journal
+         SECTION 5: CHARACTER GROUPS HUB — Horizontal Scroll
+         ═══════════════════════════════════════════════ -->
+    <section id="character-groups" class="character-groups-section">
+        <div class="character-groups-header">
+            <h2 class="reveal-up">Meet the Character Groups</h2>
+            <p class="reveal-up">Scroll to discover the magical factions and bonds that shaped the Wizarding World</p>
+        </div>
+
+        <div class="character-groups-container">
+            <!-- Dynamic title and description that updates with scrolling -->
+            <div class="groups-info">
+                <h3 class="groups-title" id="groupsTitle">The Golden Trio</h3>
+                <p class="groups-description" id="groupsDescription">The heart of the series, these three friends faced Voldemort and saved the Wizarding World.</p>
+            </div>
+
+            <!-- Horizontal scrolling cards container -->
+            <div class="groups-viewport">
+                <div class="groups-track" id="groupsTrack">
+                    
+                    <!-- Card 1: The Golden Trio -->
+                    <div class="group-card" data-title="The Golden Trio" data-description="The heart of the series, these three friends faced Voldemort and saved the Wizarding World.">
+                        <div class="card-content">
+                            <div class="card-icon">⚡</div>
+                            <h3 class="card-title">The Golden Trio</h3>
+                            <p class="card-members">Harry, Hermione & Ron</p>
+                            <p class="card-description">Courage, brilliance, and loyalty</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Dumbledore's Army -->
+                    <div class="group-card" data-title="Dumbledore's Army" data-description="A secret student organization dedicated to learning Defense Against the Dark Arts and resisting tyranny.">
+                        <div class="card-content">
+                            <div class="card-icon">🛡️</div>
+                            <h3 class="card-title">Dumbledore's Army</h3>
+                            <p class="card-members">17+ Members</p>
+                            <p class="card-description">United against darkness</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: The Order of the Phoenix -->
+                    <div class="group-card" data-title="The Order of the Phoenix" data-description="A secret organization founded by Dumbledore to combat Voldemort and his Death Eaters.">
+                        <div class="card-content">
+                            <div class="card-icon">🔥</div>
+                            <h3 class="card-title">The Order of the Phoenix</h3>
+                            <p class="card-members">Multiple Generations</p>
+                            <p class="card-description">Light against darkness</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: The Weasley Family -->
+                    <div class="group-card" data-title="The Weasley Family" data-description="A large, loving pure-blood family that embodies warmth, humor, and unwavering loyalty.">
+                        <div class="card-content">
+                            <div class="card-icon">🧡</div>
+                            <h3 class="card-title">The Weasley Family</h3>
+                            <p class="card-members">Seven Siblings & Parents</p>
+                            <p class="card-description">Family above all</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: The Marauders -->
+                    <div class="group-card" data-title="The Marauders" data-description="Four talented wizards who became best friends and created magical mischief at Hogwarts.">
+                        <div class="card-content">
+                            <div class="card-icon">🐾</div>
+                            <h3 class="card-title">The Marauders</h3>
+                            <p class="card-members">James, Sirius, Remus & Peter</p>
+                            <p class="card-description">Friendship and adventure</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: The Death Eaters -->
+                    <div class="group-card" data-title="The Death Eaters" data-description="Voldemort's followers who sought to establish pure-blood supremacy through terror and domination.">
+                        <div class="card-content">
+                            <div class="card-icon">💀</div>
+                            <h3 class="card-title">The Death Eaters</h3>
+                            <p class="card-members">Multiple Members</p>
+                            <p class="card-description">Power and tyranny</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: The Ravenclaw Network -->
+                    <div class="group-card" data-title="The Ravenclaw Network" data-description="Brilliant minds united by wisdom, learning, and the pursuit of knowledge above all else.">
+                        <div class="card-content">
+                            <div class="card-icon">🦅</div>
+                            <h3 class="card-title">The Ravenclaw Network</h3>
+                            <p class="card-members">Luna, Cho, & Scholars</p>
+                            <p class="card-description">Wisdom and creativity</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 8: The Hogwarts Core -->
+                    <div class="group-card" data-title="The Hogwarts Core" data-description="The professors and allies who protected Hogwarts and shaped generations of young witches and wizards.">
+                        <div class="card-content">
+                            <div class="card-icon">📚</div>
+                            <h3 class="card-title">The Hogwarts Core</h3>
+                            <p class="card-members">Dumbledore, McGonagall & Staff</p>
+                            <p class="card-description">Guidance and protection</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Progress indicator -->
+            <div class="groups-progress" id="groupsProgress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text"><span id="currentCard">1</span> / 8</p>
+            </div>
+        </div>
+
+        <div class="bg-glow bg-glow-1"></div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 6: ABOUT ME — Handcrafted Journal
          ═══════════════════════════════════════════════ -->
     <section id="about" class="about-section">
         <div class="about-container">
